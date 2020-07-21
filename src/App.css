@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans");
 
 body {
   background-color: hsl(0, 0%, 98%);
@@ -44,4 +44,11 @@ body {
 
 .info {
   margin-left: 20px;
+}
+
+input {
+  margin-left: 75px;
+  margin-top: 25px;
+  width: 250px;
+  padding: 10px;
 }
