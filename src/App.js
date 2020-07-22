@@ -3,6 +3,7 @@ import "./App.css";
 import countriesAll from "./countriesAll.json";
 import CountryCard from "./CountryCard";
 import SearchBar from "./SearchBar";
+import FilterRegion from "./FilterRegion";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -26,8 +27,9 @@ function App() {
       <div className="header">
         <h2 className="header-text">Where in the world?</h2>
       </div>
-      <div>
+      <div className="search">
         <SearchBar handleChange={handleChange} />
+        <FilterRegion />
       </div>
       <div className="all-countries">
         {searchResults.map((country, index) => {

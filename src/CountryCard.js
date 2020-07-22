@@ -7,7 +7,8 @@ const CountryCard = (props) => {
       <div className="info">
         <h3 className="heading">{props.oneCountry.name}</h3>
         <p>
-          <strong>Population:</strong> {props.oneCountry.population}
+          <strong>Population:</strong>{" "}
+          {props.oneCountry.population.toLocaleString()}
         </p>
         <p>
           <strong>Region:</strong> {props.oneCountry.region}

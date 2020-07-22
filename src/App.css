@@ -49,9 +49,17 @@ body {
   margin-left: 20px;
 }
 
+.search {
+  display: flex;
+  justify-content: space-between;
+  margin: 35px 75px;
+}
+
 input {
-  margin-left: 75px;
-  margin-top: 25px;
   width: 250px;
   padding: 10px;
+}
+
+select {
+  padding: 0 8px;
 }
