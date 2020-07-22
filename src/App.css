@@ -1,18 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans");
 
 body {
-  background-color: hsl(0, 0%, 98%);
+  background-color: rgba(219, 219, 219, 0.3);
 
   font-family: "Nunito Sans", sans-serif;
 }
 
 .header {
-  border-bottom: 2px solid grey;
-  margin: 0;
+  border-bottom: 2px solid rgba(189, 186, 186, 0.6);
+  background-color: white;
 }
 
 .header-text {
+  padding-top: 15px;
+  margin-top: 0;
   margin-left: 75px;
+  font-size: 20px;
 }
 
 .all-countries {
