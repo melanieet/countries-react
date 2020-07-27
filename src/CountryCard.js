@@ -5,7 +5,7 @@ const CountryCard = ({ oneCountry, clickHandler }) => {
     <div className="one-country">
       <img
         className="img"
-        onClick={clickHandler}
+        onClick={() => clickHandler(oneCountry)}
         src={oneCountry.flag}
         alt="country flag"
       ></img>

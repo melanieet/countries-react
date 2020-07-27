@@ -18,6 +18,8 @@ function App() {
     setCountry(country);
   }
 
+  console.log(country);
+
   return (
     <div>
       <div className="header">
@@ -27,19 +29,13 @@ function App() {
       {!country ? (
         <div>
           <div className="search">
-            <SearchBar
-              handleChange={handleChange}
-              searchTerm={searchTerm}
-              setSearchTerm={setSearchTerm}
-            />
+            <SearchBar handleChange={handleChange} />
             <FilterRegion setRegion={setRegion} />
           </div>
 
           <div className="all-countries">
             {countriesAll
-              .filter((country) =>
-                country.region.toLowerCase().includes(region.toLowerCase())
-              )
+              .filter((country) => country.region.includes(region))
               .filter(
                 (country) =>
                   country.name
@@ -59,10 +55,15 @@ function App() {
           </div>
         </div>
       ) : (
-        country.name
+        <div>
+          <button>Back</button>
+          <h3>{country.name}</h3>
+        </div>
       )}
     </div>
   );
 }
 
 export default App;
+
+// Need to add a callback function, but where?
