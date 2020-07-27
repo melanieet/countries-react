@@ -1,20 +1,25 @@
 import React from "react";
 
-const CountryCard = (props) => {
+const CountryCard = ({ oneCountry, clickHandler }) => {
   return (
     <div className="one-country">
-      <img className="img" src={props.oneCountry.flag} alt="country flag"></img>
+      <img
+        className="img"
+        onClick={clickHandler}
+        src={oneCountry.flag}
+        alt="country flag"
+      ></img>
+
       <div className="info">
-        <h3 className="heading">{props.oneCountry.name}</h3>
+        <h3 className="heading">{oneCountry.name}</h3>
         <p>
-          <strong>Population:</strong>{" "}
-          {props.oneCountry.population.toLocaleString()}
+          <strong>Population:</strong> {oneCountry.population.toLocaleString()}
         </p>
         <p>
-          <strong>Region:</strong> {props.oneCountry.region}
+          <strong>Region:</strong> {oneCountry.region}
         </p>
         <p>
-          <strong>Capital:</strong> {props.oneCountry.capital}
+          <strong>Capital:</strong> {oneCountry.capital}
         </p>
       </div>
     </div>

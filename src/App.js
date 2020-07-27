@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import countriesAll from "./countriesAll.json";
 import CountryCard from "./CountryCard";
@@ -7,35 +7,60 @@ import FilterRegion from "./FilterRegion";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
+  const [region, setRegion] = useState("");
+  const [country, setCountry] = useState("");
 
-  const handleChange = (event) => {
+  function handleChange(event) {
     setSearchTerm(event.target.value);
-  };
+  }
 
-  useEffect(() => {
-    const results = countriesAll.filter(
-      (country) =>
-        country.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        country.capital.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setSearchResults(results);
-  }, [searchTerm]);
+  function clickHandler(country) {
+    setCountry(country);
+  }
 
   return (
     <div>
       <div className="header">
         <h2 className="header-text">Where in the world?</h2>
       </div>
-      <div className="search">
-        <SearchBar handleChange={handleChange} />
-        <FilterRegion />
-      </div>
-      <div className="all-countries">
-        {searchResults.map((country, index) => {
-          return <CountryCard oneCountry={country} key={index} />;
-        })}
-      </div>
+
+      {!country ? (
+        <div>
+          <div className="search">
+            <SearchBar
+              handleChange={handleChange}
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
+            />
+            <FilterRegion setRegion={setRegion} />
+          </div>
+
+          <div className="all-countries">
+            {countriesAll
+              .filter((country) =>
+                country.region.toLowerCase().includes(region.toLowerCase())
+              )
+              .filter(
+                (country) =>
+                  country.name
+                    .toLowerCase()
+                    .includes(searchTerm.toLowerCase()) ||
+                  country.region
+                    .toLowerCase()
+                    .includes(searchTerm.toLowerCase())
+              )
+              .map((country, index) => (
+                <CountryCard
+                  clickHandler={clickHandler}
+                  oneCountry={country}
+                  key={index}
+                />
+              ))}
+          </div>
+        </div>
+      ) : (
+        country.name
+      )}
     </div>
   );
 }
