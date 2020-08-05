@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans");
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 
 body {
   background-color: rgba(219, 219, 219, 0.3);
-
   font-family: "Nunito Sans", sans-serif;
 }
 
@@ -35,10 +35,16 @@ body {
   margin-bottom: 75px;
 }
 
+.one-country:hover {
+  transform: scale(1.05);
+}
+
 .img {
   width: 252px;
   height: 150px;
+  object-fit: cover;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .heading {
@@ -46,7 +52,7 @@ body {
 }
 
 .info {
-  margin-left: 20px;
+  margin: 0 20px;
 }
 
 .search {
@@ -62,4 +68,45 @@ input {
 
 select {
   padding: 0 8px;
+}
+
+/* Large country card */
+.large-country-card {
+  margin: 0 75px;
+  display: flex;
+  align-content: space-evenly;
+}
+
+.first-column {
+  margin-left: 100px;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.second-column {
+  margin-top: 70px;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.back-button {
+  margin: 50px 75px;
+}
+
+.flag {
+  width: 500px;
+  height: 325px;
+}
+
+.border-countries {
+  margin-left: 675px;
+}
+
+.large-country-card p {
+  margin-bottom: 2px;
 }

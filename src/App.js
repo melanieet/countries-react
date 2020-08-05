@@ -4,6 +4,7 @@ import countriesAll from "./countriesAll.json";
 import CountryCard from "./CountryCard";
 import SearchBar from "./SearchBar";
 import FilterRegion from "./FilterRegion";
+import LargeCountryCard from "./LargeCountryCard";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -18,7 +19,9 @@ function App() {
     setCountry(country);
   }
 
-  console.log(country);
+  function showAllCountries() {
+    setCountry("");
+  }
 
   return (
     <div>
@@ -55,15 +58,13 @@ function App() {
           </div>
         </div>
       ) : (
-        <div>
-          <button>Back</button>
-          <h3>{country.name}</h3>
-        </div>
+        <LargeCountryCard
+          country={country}
+          showAllCountries={showAllCountries}
+        />
       )}
     </div>
   );
 }
 
 export default App;
-
-// Need to add a callback function, but where?
